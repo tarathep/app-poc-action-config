@@ -22,7 +22,7 @@ jobs:
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v2
       with:
-        token: ${{ secrets.GH_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         repository: tarathep/app-poc-receive-config
         event-type: cd-dev
-        client-payload: '{"repository": "${{ github.repository }}" , "ref": "${{ github.ref }}", "gh_token": "${{ secrets.GH_TOKEN }}", "github_token": "${{ secrets.GITHUB_TOKEN }}"}'
+        client-payload: '{"repository": "${{ github.repository }}" , "ref": "${{ github.ref }}", "gh_token": "${{ secrets.TEST_SECRET }}", "github_token": "${{ secrets.GITHUB_TOKEN }}"}'
