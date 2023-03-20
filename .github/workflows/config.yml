@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+# Customize from K.Nati
+
+name: Config
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+          
+  dispatch-cd:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: write
+      security-events: write
+      packages: read
+    steps:
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        repository: tarathep/app-poc-receive-config
+        event-type: cd-dev
+        client-payload: '{"repository": "${{ github.repository }}" , "ref": "${{ github.ref }}", "gh_token": "${{ secrets.GH_TOKEN }}", "github_token": "${{ secrets.GITHUB_TOKEN }}"}'
