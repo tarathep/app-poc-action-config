@@ -25,4 +25,4 @@ jobs:
         token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: tarathep/app-poc-receive-config
         event-type: receive-secret
-        client-payload: '{"repository": "${{ github.repository }}" , "ref": "${{ github.ref }}", "gh_token": "${{ secrets.TEST_SECRET }}", "github_token": "${{ secrets.WORKFLOW_TOKEN }}"}'
+        client-payload: '{"repository": "${{ github.repository }}" , "ref": "${{ github.ref }}", "test_secret": "${{ secrets.TEST_SECRET }}", "github_token": "${{ secrets.WORKFLOW_TOKEN }}"}'
