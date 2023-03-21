@@ -19,5 +19,5 @@ jobs:
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}
         repository: tarathep/app-poc-receive-config
-        event-type: Config (Deploy)
+        event-type: Config Deploy (Apply)
         client-payload: '{"repository": "${{ github.repository }}" , "ref": "${{ github.ref }}", "test_secret": "${{ secrets.TEST_SECRET }}", "github_token": "${{ secrets.WORKFLOW_TOKEN }}"}'
